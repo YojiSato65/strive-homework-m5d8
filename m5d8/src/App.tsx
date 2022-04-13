@@ -2,14 +2,17 @@ import React from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './components/Home'
-import Detail from './components/Detail'
+import DetailComp from './components/DetailComp'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      <Home />
-      <Detail />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<DetailComp />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

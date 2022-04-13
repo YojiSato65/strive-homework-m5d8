@@ -1,5 +1,6 @@
-import { Col, Card, Button } from 'react-bootstrap'
+import { Col, Card } from 'react-bootstrap'
 import Song from '../types/Song'
+import { Link } from 'react-router-dom'
 
 interface SongCompProps {
   song: Song
@@ -13,7 +14,7 @@ const SongComp = ({ song }: SongCompProps) => {
         <Card.Body>
           <Card.Title>{song.title}</Card.Title>
           <Card.Text>{song.artist.name}</Card.Text>
-          <Button variant="success">Detail</Button>
+          <Link to={'/' + song.id}>Detail</Link>
         </Card.Body>
       </Card>
     </Col>
